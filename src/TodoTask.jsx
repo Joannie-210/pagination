@@ -9,7 +9,7 @@ const TodoTask = () => {
   return (
     <div>
       <h1>Task List</h1>
-      <ul>{tasks.map((prevTask, index))=>[...prevTask]</ul>
+      <ul>{tasks.map((prevTask, index)=>[...prevTask])}</ul>
     </div>
   )
 }

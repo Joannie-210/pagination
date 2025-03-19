@@ -39,9 +39,9 @@ const Home = () => {
   }, []);
 
   const filteredPosts = posts.filter((post) => {
-    if (search.toLowerCase().startsWith("m")) {
+    if (search.toLowerCase().trim().startsWith("m")) {
       return post.gender.toLowerCase() === "male";
-    } else if (search.toLowerCase().startsWith("f")) {
+    } else if (search.toLowerCase().trim().startsWith("f")) {
       return post.gender.toLowerCase() === "female";
     }
     return true;
@@ -69,7 +69,7 @@ const Home = () => {
           }}
           className="w-full max-w-md border border-gray-300 rounded-lg p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-        <Button label= <FaMagnifyingGlass></FaMagnifyingGlass> variant="primary" onClick={search} />
+        <Button label= {<FaMagnifyingGlass/>} variant="primary" onClick={() => setSearch(search)} />
       
         <Button  className= 'opacity-50 ml-6' label="View Chart" variant="secondary" onClick={() => navigate("/chart", { state: { posts } })} />
       </div>
